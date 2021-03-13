@@ -18,14 +18,15 @@ After refactoring the script, run time improved significantly. Compare the run t
 
 The original script was slower, because it had to loop through the dataset multiple times, outputting the results for each individual stock, and then repeating the process until the full results were collected. To collect the full results for our dataset, it had to repeat the following loop 12 times.
 
-'4)Loop through the tickers
+```
+'4a)Loop through the tickers
     For i = 0 To 11
     ticker = tickers(i)
     totalVolume = 0
         '5) Loop through rows in the data
         Worksheets(yearValue).Activate
         For j = 2 To RowCount
-            
+        
             '5a) Get total volume
             If Cells(j, 1).Value = ticker Then
                 totalVolume = totalVolume + Cells(j, 8).Value
@@ -49,10 +50,49 @@ The original script was slower, because it had to loop through the dataset multi
       Cells(4 + i, 2).Value = totalVolume
       Cells(4 + i, 3).Value = (endingPrice / startingPrice) - 1
       
-      Next i'
+      Next i
+   ```  
       
- The refactored code instead only needs to loop through the dataset once, storing its results in arrays before outputting them to a worksheet. 
-
+The refactored code instead only needs to loop through the dataset once, storing the values for each stock in an array before outputting the final results. The script uses these output arrays to store the stock values.
+```
+    Dim tickerVolumes(12) As String
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrices(12) As Single
+```
+This allows to collect a full set of results in a single loop, completing the analysis much more quickly.
+```
+For i = 0 To 11
+        tickerVolumes(i) = 0
+    Next i
+        
+    '2b) Loop over all the rows in the spreadsheet.
+        For i = 2 To RowCount
+        
+        '3a) Increase volume for current ticker
+            If Cells(i, 1).Value = tickers(tickerIndex) Then
+                tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+            End If
+            
+            '3b) Check if the current row is the first row with the selected tickerIndex.
+  
+            If Cells(i - 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
+                tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+            End If
+        
+        '3c) check if the current row is the last row with the selected ticker
+         'If the next row’s ticker doesn’t match, increase the tickerIndex.
+            If Cells(i + 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
+                tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+            End If
+            
+        '3d Increase the tickerIndex.
+            If Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
+                tickerIndex = tickerIndex + 1
+            
+            'End If
+            End If
+        Next i
+ ```
 ## Summary
 #### What are the advantages or disadvantages of refactoring code?
 Refactoring code is time consuming work. Time that could be spent on a new project instead is used reviewing and editing existing code. But the effort to refactor may be worthwhile to improve the efficiency and logical structure of your code. Refactored code may be easier for another programmer to understand and it edit, and it may make a script run faster and use less memory.
