@@ -1,6 +1,6 @@
 # Green Stocks Analysis
 ## Overview of Project
-The purpose of this project was to refactor a VBA script used to analyze the performance of a collection of green energy stocks. The original code was functional, but required running multiple loops through the dataset, increasing its run time. By refactoring the code to require only one loop, I improved its efficiency, allowing for the efficiency of a much larger dataset.
+The purpose of this project was to refactor a VBA script used to analyze the performance of a collection of green energy stocks. The stock data and VBA scripts can be found in the workbook, [VBA_Challenge](VBA_Challenge.xlsm). The original script, AllStocksAnalysis, requires running multiple loops through the dataset, increasing its run time. The refactored script, AllStocksAnalysisRefactored, only needs to run one loop. This improves its efficiency and will allow for the analysis of a much larger dataset in the future.
 
 ## Results
 ### Stock Performance
