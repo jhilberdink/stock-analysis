@@ -4,11 +4,11 @@ The purpose of this project was to refactor a VBA script used to analyze the per
 
 ## Results
 ### Stock Performance
-Overall, this group of stocks peformed significantly better in 2017 than 2018. All stocks except TERP had postive returns in 2017; only ENPH and RUN, however, continued to gain value in 2018. ENPH was the strongest performer across both years. 
+Overall, this group of stocks peformed significantly better in 2017 than 2018. All stocks except TERP had postive returns in 2017; only ENPH and RUN, however, continued to gain value in 2018. ENPH was the strongest performer across both years.
+
 ![2017 performance](https://user-images.githubusercontent.com/79542537/111043830-ca1b5a00-8412-11eb-859d-2e26642bdbb9.PNG)
+
 ![2018 performance](https://user-images.githubusercontent.com/79542537/111043843-e15a4780-8412-11eb-8801-b6d6785346af.png)
-
-
 
 ### Refactoring the Script
 After refactoring the script, run time improved significantly. Compare the run time of the original script vs. the refactored version.
