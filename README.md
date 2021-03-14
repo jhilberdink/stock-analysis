@@ -1,4 +1,4 @@
-# Green Stocks Analysis
+# Green Stocks Analysis with VBA
 ## Overview of Project
 The purpose of this project was to refactor a VBA script used to analyze the performance of a collection of green energy stocks. The stock data and VBA scripts can be found in the workbook, [VBA_Challenge](VBA_Challenge.xlsm). The original script, AllStocksAnalysis, requires running multiple loops through the dataset, increasing its run time. The refactored script, AllStocksAnalysisRefactored, only needs to loop through the data once. This improves its efficiency and will allow for the analysis of a much larger dataset in the future.
 
