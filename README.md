@@ -99,4 +99,4 @@ Refactoring code is time consuming work. Time that could be spent on a new proje
 
 #### How do these pros and cons apply to refactoring the original VBA script?
 
-The original VBA script used in this project was functional, produced correct results, and ran in a short amount of time. But it only needed to output results for 12 stocks, and may not have performed as well with a larger data set. By refactoring the script to use fewer loops, its run time improved significantly. The resulting script is not only faster, but can likely handle a much larger dataset, making it more expandable.
+The original VBA script used in this project was functional, produced correct results, and ran in a short amount of time. But it only needed to output results for 12 stocks, and may not have performed as well with a larger data set. By refactoring the script to use fewer loops, its run time improved significantly. The resulting script is faster and should be able to process a much larger dataset.
