@@ -1,6 +1,6 @@
 # Green Stocks Analysis
 ## Overview of Project
-The purpose of this project was to refactor a VBA script used to analyze the performance of a collection of green energy stocks. The stock data and VBA scripts can be found in the workbook, [VBA_Challenge](VBA_Challenge.xlsm). The original script, AllStocksAnalysis, requires running multiple loops through the dataset, increasing its run time. The refactored script, AllStocksAnalysisRefactored, only needs to run one loop. This improves its efficiency and will allow for the analysis of a much larger dataset in the future.
+The purpose of this project was to refactor a VBA script used to analyze the performance of a collection of green energy stocks. The stock data and VBA scripts can be found in the workbook, [VBA_Challenge](VBA_Challenge.xlsm). The original script, AllStocksAnalysis, requires running multiple loops through the dataset, increasing its run time. The refactored script, AllStocksAnalysisRefactored, only needs to loop through the data once. This improves its efficiency and will allow for the analysis of a much larger dataset in the future.
 
 ## Results
 ### Stock Performance
@@ -16,7 +16,7 @@ After refactoring the script, run time improved significantly. Compare the run t
 ![2017 original](https://user-images.githubusercontent.com/79542537/111043475-c71f6a00-8410-11eb-95b7-e01a15937f56.png)
 ![2017 msgbox](https://user-images.githubusercontent.com/79542537/111043476-cbe41e00-8410-11eb-8015-bf3c90592199.png)
 
-The original script was slower, because it had to loop through the dataset multiple times, outputting the results for each individual stock, and then repeating the process until the full results were collected. To collect the full results for our dataset, it had to repeat the following loop 12 times.
+The original script is slower because it relies on a nested loop that runs through the entire dataset once for each stock. The following code outputs its results to a worksheet and then repeats itself until the analysis is complete. For our dataset, the nested loop needs to run 12 times.
 
 ```
 '4a)Loop through the tickers
