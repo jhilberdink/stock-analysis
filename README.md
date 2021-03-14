@@ -4,7 +4,7 @@ The purpose of this project was to refactor a VBA script used to analyze the per
 
 ## Results
 ### Stock Performance
-Overall, this group of stocks performed significantly better in 2017 than 2018. All stocks except TERP had positive returns in 2017; only ENPH and RUN, however, continued to gain value in 2018. ENPH was the strongest performer across both years.
+Overall, this group of stocks performed significantly better in 2017 than 2018. All stocks except TERP had positive returns in 2017; only ENPH and RUN, however, continued to gain value in 2018. ENPH was the strongest perfomer across both years.
 
 ![2017 performance](https://user-images.githubusercontent.com/79542537/111043830-ca1b5a00-8412-11eb-859d-2e26642bdbb9.PNG)
 
